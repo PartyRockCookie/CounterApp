@@ -6,32 +6,98 @@
     android:layout_height="fill_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.willie.sleeptimer.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:background="#465362">
 
     <Button
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="28dp"
-        android:text="Start"></Button>
+        android:text="Start"
+        android:layout_marginBottom="156dp"
+        android:height="50dp"
+        android:width="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_button"></Button>
 
     <Button
         android:id="@+id/btnEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:text="Stop"
+        android:layout_alignTop="@+id/btnStart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
+        android:width="200dp"
+        android:background="@drawable/round_button"></Button>
+
+    <NumberPicker
+        android:layout_width="50dp"
+        android:layout_height="75dp"
+        android:id="@+id/hours"
         android:layout_centerVertical="true"
-        android:layout_marginRight="67dp"
-        android:text="Stop"></Button>
+        android:layout_alignLeft="@+id/btnStart"
+        android:layout_alignStart="@+id/btnStart"
+        android:background="#F4FFFD" />
+
+    <NumberPicker
+        android:layout_width="50dp"
+        android:layout_height="75dp"
+        android:id="@+id/minutes"
+        android:layout_alignTop="@+id/hours"
+        android:layout_centerHorizontal="true"
+        android:background="#F9DC5C" />
+
+    <NumberPicker
+        android:layout_width="50dp"
+        android:layout_height="75dp"
+        android:id="@+id/seconds"
+        android:layout_alignTop="@+id/minutes"
+        android:layout_alignRight="@+id/btnStart"
+        android:layout_alignEnd="@+id/btnStart"
+        android:background="#ED254E" />
 
     <TextView
-        android:id="@+id/textViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnEnd"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Hours"
+        android:id="@+id/hoursTextView"
+        android:layout_above="@+id/hours"
+        android:layout_alignLeft="@+id/hours"
+        android:layout_alignStart="@+id/hours" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Minutes"
+        android:id="@+id/minutesTextView"
+        android:layout_above="@+id/minutes"
+        android:layout_alignLeft="@+id/minutes"
+        android:layout_alignStart="@+id/minutes" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Seconds"
+        android:id="@+id/secondsTextView"
+        android:layout_above="@+id/seconds"
+        android:layout_alignLeft="@+id/seconds"
+        android:layout_alignStart="@+id/seconds" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00:00:00"
+        android:id="@+id/textViewTime"
+        android:layout_above="@+id/hoursTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="17dp"
-        android:textSize="25sp"/>
+        android:layout_marginBottom="84dp"
+        android:textSize="50dp"
+        android:textColor="#F4FFFD" />
+
 </RelativeLayout>
