@@ -1,5 +1,7 @@
 package com.example.willie.sleeptimer;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.os.CountDownTimer;
 
 import java.util.concurrent.TimeUnit;
@@ -7,10 +9,13 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Willie Ausrotas on 3/14/2016.
  */
+
+
 public class CounterClass extends CountDownTimer {
     public CounterClass(long millisInFuture, long countDownInterval){
         super(millisInFuture, countDownInterval);
     }
+
 
     @Override
     public void onTick(long millisUntilFinished) {
@@ -25,6 +30,8 @@ public class CounterClass extends CountDownTimer {
 
     @Override
     public void onFinish() {
-        MainActivity.textViewTime.setText("Completed");
+
+        MainActivity.textViewTime.setText("Goodnight! Sound is now off.");
+        MainActivity.showViews();
     }
 }

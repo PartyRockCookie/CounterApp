@@ -49,17 +49,17 @@
     <EditText
         android:layout_width="50dp"
         android:layout_height="75dp"
-        android:inputType="number"
         android:ems="10"
         android:id="@+id/hours"
         android:background="@drawable/rectangle_box"
         android:textColor="#F4FFFD"
         android:textAlignment="center"
-        android:text="0"
+        android:text="00"
         android:layout_below="@+id/textViewTime"
         android:layout_alignLeft="@+id/textViewTime"
         android:layout_alignStart="@+id/textViewTime"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="70dp"
+        android:inputType="text" />
 
     <EditText
         android:layout_width="50dp"
@@ -67,7 +67,7 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/minutes"
-        android:text="0"
+        android:text="00"
         android:textColor="#F4FFFD"
         android:textAlignment="center"
         android:background="@drawable/rectangle_box"
@@ -79,24 +79,70 @@
         android:layout_height="75dp"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/seconds"
         android:layout_alignTop="@+id/minutes"
         android:layout_alignRight="@+id/btnStart"
         android:layout_alignEnd="@+id/btnStart"
         android:textColor="#F4FFFD"
         android:textAlignment="center"
-        android:text="0"
+        android:text="00"
         android:background="@drawable/rectangle_box" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
-        android:text="New Button"
-        android:id="@+id/button"
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/arrowUpHour"
         android:layout_above="@+id/minutes"
         android:layout_alignLeft="@+id/hours"
         android:layout_alignStart="@+id/hours"
-        android:background="@drawable/arrow" />
+        android:src="@drawable/arrow"
+        android:clickable="true" />
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/arrowUpMinute"
+        android:layout_above="@+id/minutes"
+        android:layout_alignLeft="@+id/minutes"
+        android:layout_alignStart="@+id/minutes"
+        android:src="@drawable/arrow"
+        android:clickable="true" />
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/arrowUpSecond"
+        android:layout_above="@+id/seconds"
+        android:layout_alignLeft="@+id/seconds"
+        android:layout_alignStart="@+id/seconds"
+        android:clickable="true"
+        android:src="@drawable/arrow" />
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/arrowDownHour"
+        android:layout_below="@+id/hours"
+        android:layout_alignRight="@+id/hours"
+        android:layout_alignEnd="@+id/hours"
+        android:src="@drawable/arrow" />
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/arrowDownMinute"
+        android:layout_below="@+id/minutes"
+        android:layout_alignLeft="@+id/minutes"
+        android:layout_alignStart="@+id/minutes"
+        android:src="@drawable/arrow" />
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/arrowDownSecond"
+        android:layout_below="@+id/seconds"
+        android:layout_alignLeft="@+id/seconds"
+        android:layout_alignStart="@+id/seconds"
+        android:src="@drawable/arrow" />
 
 </RelativeLayout>
