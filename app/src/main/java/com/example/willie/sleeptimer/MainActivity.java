@@ -1,5 +1,6 @@
 package com.example.willie.sleeptimer;
 
+import android.content.Context;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
     static TextView textViewTime;
     static EditText hourText, minuteText, secondText;
     static ImageView arrowUpHour, arrowUpMinute, arrowUpSecond, arrowDownHour, arrowDownMinute, arrowDownSecond;
-    static AudioManager audioManager;
     CounterClass timer;
+    Context c;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         arrowDownMinute = (ImageView)findViewById(R.id.arrowDownMinute);
         arrowUpSecond = (ImageView)findViewById(R.id.arrowUpSecond);
         arrowDownSecond = (ImageView)findViewById(R.id.arrowDownSecond);
+        c = this;
+
 
 
         //Make timer invisible for now.
@@ -147,7 +152,8 @@ public class MainActivity extends AppCompatActivity {
                 int minutes = Integer.parseInt(minuteText.getText().toString());
                 int seconds = Integer.parseInt(secondText.getText().toString());
                 long total = (TimeUnit.HOURS.toMillis(hours) + TimeUnit.MINUTES.toMillis(minutes) + TimeUnit.SECONDS.toMillis(seconds));
-                timer = new CounterClass(total, 1000);
+                timer = new CounterClass(total, 1000, c);
+                textViewTime.setTextSize(50);
                 textViewTime.setVisibility(View.VISIBLE);
                 hideViews();
                 timer.start();
@@ -187,7 +193,5 @@ public class MainActivity extends AppCompatActivity {
         arrowDownSecond.setVisibility(View.VISIBLE);
     }
 
-    public static void muteAudio(){
-        //audioManager
-    }
+
 }

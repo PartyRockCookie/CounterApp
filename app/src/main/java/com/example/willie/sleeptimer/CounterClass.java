@@ -12,9 +12,14 @@ import java.util.concurrent.TimeUnit;
 
 
 public class CounterClass extends CountDownTimer {
-    public CounterClass(long millisInFuture, long countDownInterval){
+    Context context;
+
+    public CounterClass(long millisInFuture, long countDownInterval, Context context){
         super(millisInFuture, countDownInterval);
+        this.context = context;
     }
+
+
 
 
     @Override
@@ -30,8 +35,13 @@ public class CounterClass extends CountDownTimer {
 
     @Override
     public void onFinish() {
-
+        AudioManager audioManager = (AudioManager) context.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+        for(int i = 0;i<10;i++){
+            audioManager.adjustVolume(AudioManager.ADJUST_LOWER, AudioManager.ADJUST_MUTE);
+        }
+        MainActivity.textViewTime.setTextSize(20);
         MainActivity.textViewTime.setText("Goodnight! Sound is now off.");
         MainActivity.showViews();
     }
+
 }
